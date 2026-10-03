@@ -1,0 +1,19 @@
+{
+  "name": "gpt-codex-companion",
+  "version": "0.1.0",
+  "description": "GPT character companion for Codex subscription quota on Windows",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node scripts/control.mjs open",
+    "desktop": "node scripts/control.mjs desktop",
+    "test": "node --test tests/*.test.mjs",
+    "install:mac": "node scripts/install-macos.mjs",
+    "uninstall:mac": "node scripts/uninstall-macos.mjs",
+    "probe:mac": "node scripts/probe-macos.mjs"
+  }
+}

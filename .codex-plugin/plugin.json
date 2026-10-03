@@ -1,0 +1,36 @@
+{
+  "name": "gpt-codex-companion",
+  "version": "0.1.0",
+  "description": "GPT 娘桌面挂件：跟随 Codex，显示订阅额度快照、重置时间和本机用量。",
+  "author": {
+    "name": "W-15",
+    "url": "https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GPT 娘 · Codex 额度挂件",
+    "shortDescription": "银发 GPT 娘陪伴与 Codex 额度快照",
+    "longDescription": "独立 Windows 桌面挂件，支持拖动、吸附、按压回弹、气泡和本机额度快照。基于 MeteorNOX / Yang-huai406 的 For-Codex 项目。",
+    "developerName": "W-15",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "显示 GPT 娘桌面挂件",
+      "查看 Codex 订阅额度与重置时间",
+      "检查 GPT 娘跟随状态"
+    ],
+    "brandColor": "#73A9AE",
+    "composerIcon": "./assets/gpt-companion-r02-readable.png",
+    "logo": "./assets/gpt-companion-r02-readable.png"
+  },
+  "license": "MIT",
+  "keywords": [
+    "gpt",
+    "codex",
+    "quota",
+    "companion"
+  ],
+  "mcpServers": "./.mcp.json"
+}

@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 使用与安装说明
+    url: https://github.com/ikun2018/gpt-codex-companion#readme
+    about: 安装、自动跟随、随机台词、额度口径和停止方法。
+  - name: 验证范围
+    url: https://github.com/ikun2018/gpt-codex-companion/blob/main/docs/W15_VERIFICATION.md
+    about: 本版本测试结果与尚未验证的平台。
+  - name: 安全问题
+    url: https://github.com/ikun2018/gpt-codex-companion/blob/main/SECURITY.md
+    about: 请勿在公开问题中提交凭据或漏洞利用细节。
+  - name: 上游原项目
+    url: https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget
+    about: 本项目的原始挂件与 For-Codex 适配来源。
