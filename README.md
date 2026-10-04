@@ -1,8 +1,16 @@
-# GPT 娘 · Codex 额度挂件（W-15）
+# CuteGPT · Codex 额度挂件（W-15）
 
-Windows Codex 桌面挂件，默认显示 5 小时／周订阅额度快照、剩余百分比、重置时间与快照更新时间。银发 GPT 娘采用原小鲸鱼的 Q 版半身画风，支持拖动、吸附、按压回弹、角色气泡、声音和自定义素材。
+Windows Codex 桌面挂件，默认显示 5 小时／周订阅额度快照、剩余百分比、重置时间与快照更新时间。银发 CuteGPT 采用原小鲸鱼的 Q 版半身画风，支持拖动、吸附、按压回弹、角色气泡、声音和自定义素材。
 
 这是社区项目，非 OpenAI 官方插件。
+
+## 30 秒认识 CuteGPT
+
+[![CuteGPT 宣传视频封面](docs/media/CuteGPT_cover.png)](https://github.com/MnxD2A6/gpt-codex-companion/releases/download/v0.1.0/CuteGPT_promo_1080p.mp4)
+
+[观看／下载宣传视频（30 秒 · 1080p · 16:9）](https://github.com/MnxD2A6/gpt-codex-companion/releases/download/v0.1.0/CuteGPT_promo_1080p.mp4) · [下载 Windows 插件包](https://github.com/MnxD2A6/gpt-codex-companion/releases/tag/v0.1.0)
+
+视频展示角色、订阅额度快照、本地梗台词与自动跟随。片中额度为示例数据，窗口为功能示意动画。
 
 基于 [MeteorNOX/DeepSeek-Balance-Whale-Widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) 的 For-Codex 分支，Codex 适配原作者 Yang-huai406；保留 [macOS PR #128](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget/pull/128) 来源。W-15 0.1.0 首版验证范围为 Windows x64。
 
@@ -22,9 +30,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-packag
 
 ## 使用
 
-- 点击角色：随机说一句 GPT 娘台词；开启后，开场自动冒泡，之后每 30–70 秒随机说话，约 6.5 秒收起。
+- 点击角色：随机说一句 CuteGPT 台词；开启后，开场自动冒泡，之后每 30–70 秒随机说话，约 6.5 秒收起。
 - 查看额度：菜单中的“概览”或“查看订阅额度”；关闭随机说话后，点击角色仍可查看额度卡片。
-- 编辑台词：设置中的“音效、提示与手感”，每行一句，可关闭“GPT 娘随机说话”。内置 60 条玩笑台词，包含“傻子Tibo”“给我买充值卡”“你怎么来了”，以及 GPT、DeepSeek、Claude、Gemini、Grok、Copilot、Cursor 和 AI 画图等梗。台词本地随机播放，不调用模型。
+- 编辑台词：设置中的“音效、提示与手感”，每行一句，也可关闭随机说话。内置 60 条玩笑台词，包含“傻子Tibo”“给我买充值卡”“你怎么来了”，以及 GPT、DeepSeek、Claude、Gemini、Grok、Copilot、Cursor 和 AI 画图等梗。台词本地随机播放，不调用模型。
 - 右键角色或悬停后的菜单按钮：进入概览／用量／设置。
 - 设置：角色大小、吸附、气泡、声音、素材管理；保存生效，取消放弃草稿。
 - 托盘：恢复显示、切换独立桌面／跟随 Codex、退出。
