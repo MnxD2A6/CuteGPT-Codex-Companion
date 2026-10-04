@@ -10,6 +10,8 @@ Windows Codex 桌面挂件，默认显示 5 小时／周订阅额度快照、剩
 
 [观看／下载宣传视频（30 秒 · 1080p · 16:9）](https://github.com/MnxD2A6/gpt-codex-companion/releases/download/v0.1.0/CuteGPT_promo_1080p.mp4) · [下载 Windows 插件包](https://github.com/MnxD2A6/gpt-codex-companion/releases/tag/v0.1.0)
 
+[在 B站观看 CuteGPT 演示](https://www.bilibili.com/video/BV1vsHL6oEco/)
+
 视频展示角色、订阅额度快照、本地梗台词与自动跟随。片中额度为示例数据，窗口为功能示意动画。
 
 基于 [MeteorNOX/DeepSeek-Balance-Whale-Widget](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget) 的 For-Codex 分支，Codex 适配原作者 Yang-huai406；保留 [macOS PR #128](https://github.com/MeteorNOX/DeepSeek-Balance-Whale-Widget/pull/128) 来源。W-15 0.1.0 首版验证范围为 Windows x64。
