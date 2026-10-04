@@ -16,13 +16,17 @@ Windows Codex 桌面挂件，默认显示 5 小时／周订阅额度快照、剩
 
 ## 安装
 
-需要包含 npm 的 Node.js 24+，以及支持插件功能的 Codex 桌面应用。首次安装会下载 Electron 44.3.0；发行 ZIP 是插件包，不是离线 EXE。
+推荐下载 [Windows x64 简易安装包](https://github.com/MnxD2A6/gpt-codex-companion/releases/download/v0.1.0/CuteGPT-0.1.0-quick-install-windows-x64.zip)，无需手动安装 Node.js；需要已安装支持插件功能的 Codex 桌面应用。首次安装仍需联网下载 Electron 44.3.0。
 
-1. 将 ZIP 完整解压到固定目录。
-2. 双击 `安装插件.cmd`。
+1. 将 ZIP 完整解压到普通文件夹，不要在压缩包内直接运行。
+2. 双击 `安装CuteGPT.cmd`，保持网络连接并等待安装完成。
 3. 安装完成后新建 Codex 聊天，加载 `gpt_quota`、`gpt_open` 等工具。
 
-可先执行只读预检：
+简易包附带经官方 SHA-256 校验的 Node.js 24.19.0，安装到当前用户的 `LocalAppData/CuteGPT`，只供插件使用，不修改系统 PATH。使用期间请保留该运行时目录；Node 及其依赖许可随包保留。
+
+如果已安装 Node.js 24+（含 npm），也可继续使用原 `gpt-codex-companion-0.1.0-windows.zip`，解压后双击 `安装插件.cmd`。两种包都沿用同一插件安装器，都不是离线 EXE。
+
+原插件包可先执行只读预检：
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-package.ps1 -CheckOnly
 ```

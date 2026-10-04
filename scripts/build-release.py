@@ -113,7 +113,7 @@ for file in sorted(ROOT.rglob('*')):
     # The vendored parser's dist folder is a required runtime dependency.
     if any(p in blocked - {'dist'} or p.startswith(('qa-', 'private-backup')) for p in rel.parts):
         continue
-    if rel.parts[0] == 'dist' or (rel.parts[0] == 'docs' and name not in {'docs/UPSTREAM-README.md','docs/W15_VERIFICATION.md'}):
+    if rel.parts[0] == 'dist' or (rel.parts[0] == 'docs' and name not in {'docs/UPSTREAM-README.md','docs/W15_VERIFICATION.md','docs/QUICK_INSTALL.md','docs/media/CuteGPT_cover.png'}):
         continue
     assert not file.is_symlink(), 'Unexpected symlink: ' + name
     assert rel.parts[0] in allowed or name in root_files or len(rel.parts) == 1 and file.suffix in {'.cmd', '.command'}, 'Unexpected file: ' + name
