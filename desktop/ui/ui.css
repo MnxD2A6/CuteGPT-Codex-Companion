@@ -137,4 +137,5 @@ html.desktop .whale-quota-box{padding:10px;border-radius:10px}
 html.desktop .whale-quota-box progress::-webkit-progress-value{background:#37787d}
 html.desktop .whale-quota-box:nth-child(2) progress::-webkit-progress-value{background:#76908b}
 html.desktop .dshwv-menu-btn{background:#37787d}
+html.desktop .dshwv-pop .dshwv-bshape,html.desktop .dshwv-pop .dshwv-b1,html.desktop .dshwv-pop .dshwv-b2{stroke:#286b70}
 .whale-v3-dialog .gpt-talk-toggle{justify-content:flex-start;gap:8px}.whale-v3-dialog .gpt-talk-toggle input{width:15px;margin:0}.whale-v3-dialog .gpt-talk-lines{display:block}.whale-v3-dialog .gpt-talk-lines textarea{display:block;width:100%;margin-top:8px;min-height:95px;resize:vertical;padding:10px;border:1px solid #cdd6d6;border-radius:8px;background:#fff;color:#292c34;font-family:inherit;font-size:13px;line-height:1.7}
