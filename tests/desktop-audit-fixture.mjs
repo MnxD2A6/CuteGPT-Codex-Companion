@@ -34,14 +34,14 @@ export async function verifyDesktop({ app, window, screen, setHost, setTestCurso
     fs.writeFileSync(path.join(output,'gpt-auto-talk.png'),(await window.webContents.capturePage()).toPNG());
     await ev("window.__whaleRenderTest.close(); window.__talkBefore=JSON.stringify(GptCompanionTalk.settings); WhaleFeedback.open(); (()=>{const t=document.querySelector('textarea[aria-label=\"GPT 娘随机台词\"]');t.value='取消的草稿';t.dispatchEvent(new Event('input'));[...document.querySelector('.whale-v3-dialog').querySelectorAll('button')].find(b=>b.textContent==='取消').click();})()");
     assert.equal(await ev("JSON.stringify(GptCompanionTalk.settings) === window.__talkBefore"),true);
-    await ev("GptCompanionTalk.save({enabled:true,lines:['你怎么来了','给我买充值卡']}); WhaleAccountView.setMode('subscription')");
+    await ev("GptCompanionTalk.save({enabled:true,lines:['你怎么来了','给我买重置卡']}); WhaleAccountView.setMode('subscription')");
     await ev("window.__whaleRenderTest.open()");
-    await wait("window.__whaleRenderTest.status().scene === 'chatter' && document.querySelector('.dshwv-pop-open')?.innerText.includes('来了') || document.querySelector('.dshwv-pop-open')?.innerText.includes('充值卡')",'subscription click opens character speech');
+    await wait("window.__whaleRenderTest.status().scene === 'chatter' && document.querySelector('.dshwv-pop-open')?.innerText.includes('来了') || document.querySelector('.dshwv-pop-open')?.innerText.includes('重置卡')",'subscription click opens character speech');
     const firstTalk=await ev("document.querySelector('.dshwv-pop-open').innerText.trim()");
     await ev("window.__whaleRenderTest.open()");
     await wait("document.querySelector('.dshwv-pop-open')?.innerText.trim() !== "+JSON.stringify(firstTalk),'click chooses a non-repeating line');
     await wait("!document.querySelector('.dshwv-pop-open')",'speech automatically closes',9000);
-    await ev("GptCompanionTalk.save({enabled:false,lines:['你怎么来了','给我买充值卡']}); WhaleAccountView.setMode('api')");
+    await ev("GptCompanionTalk.save({enabled:false,lines:['你怎么来了','给我买重置卡']}); WhaleAccountView.setMode('api')");
     checks.push('GPT speaks automatically and on subscription clicks, avoids repeated lines, closes on time and cancels phrase drafts');
     await ev('window.__whaleRenderTest.place(140, 140, false)'); await delay(450);
     const viewport = await ev("(() => {const r=document.querySelector('.dshwv-img').getBoundingClientRect(),p=document.querySelector('.dshwv-position'),root=document.querySelector('.dshwv-root');return {width:innerWidth,height:innerHeight,position:p.getBoundingClientRect().toJSON(),positionStyle:p.style.cssText,root:root.getBoundingClientRect().toJSON(),pet:{left:r.left,top:r.top,right:r.right,bottom:r.bottom,width:r.width,height:r.height}};})()");

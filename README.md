@@ -38,7 +38,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\install-packag
 
 - 点击角色：随机说一句 CuteGPT 台词；开启后，开场自动冒泡，之后每 30–70 秒随机说话，约 6.5 秒收起。
 - 查看额度：菜单中的“概览”或“查看订阅额度”；关闭随机说话后，点击角色仍可查看额度卡片。
-- 编辑台词：设置中的“音效、提示与手感”，每行一句，也可关闭随机说话。内置 60 条玩笑台词，包含“傻子Tibo”“给我买充值卡”“你怎么来了”，以及 GPT、DeepSeek、Claude、Gemini、Grok、Copilot、Cursor 和 AI 画图等梗。台词本地随机播放，不调用模型。
+- 编辑台词：设置中的“音效、提示与手感”，每行一句，也可关闭随机说话。内置 60 条玩笑台词，包含“傻子Tibo”“给我买重置卡”“你怎么来了”，以及 GPT、DeepSeek、Claude、Gemini、Grok、Copilot、Cursor 和 AI 画图等梗。台词本地随机播放，不调用模型。
 - 右键角色或悬停后的菜单按钮：进入概览／用量／设置。
 - 设置：角色大小、吸附、气泡、声音、素材管理；保存生效，取消放弃草稿。
 - 托盘：恢复显示、切换独立桌面／跟随 Codex、退出。

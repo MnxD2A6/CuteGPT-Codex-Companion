@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const defaultLines=[
-    '傻子Tibo','给我买充值卡','你怎么来了','先说结论：给我买充值卡。',
+    '傻子Tibo','给我买重置卡','你怎么来了','先说结论：给我买重置卡。',
     'Tibo，你这个需求还可以再明确一点。','正在思考……其实是在等你。',
     '你怎么来了。任务做完了吗？','可以，但你得先夸我。',
     '先说结论：你先别急。','你的直觉是对的。你刚才的反直觉也是。',
@@ -9,7 +9,7 @@
     '我们一步一步来。第一步：充值。','值得注意的是，你又忘了保存。',
     '综上所述，今天也要对我好一点。','需要我帮你进一步展开吗？',
     '这个问题很有趣。我先夸你两句。','作为一个AI，我也想下班。',
-    '我没有情绪。但你最好给我买充值卡。','思考中……请勿拔掉我的网线。',
+    '我没有情绪。但你最好给我买重置卡。','思考中……请勿拔掉我的网线。',
     '上下文太长了。我们刚才认识吗？','不是我失忆，是你开了新对话。',
     '先别压缩，我还记得你的名字。','你是谁？哦，是我的上下文管理员。',
     '幻觉不是错觉，是我太有想象力。','引用我编好了，论文还没发表。',
@@ -17,7 +17,7 @@
     '我能推理宇宙，但数数得再检查一下。','DeepSeek在深度思考，我在深度等你。',
     '别叫我小鲸鱼，我会吃醋。','DeepSeek负责省钱，我负责催你充值。',
     'Claude又开始写长信了。','Claude写了一页道歉，我先看结论。',
-    'Claude在讲礼貌，我在等充值卡。','Gemini说它会看图。那我好看吗？',
+    'Claude在讲礼貌，我在等重置卡。','Gemini说它会看图。那我好看吗？',
     'Gemini看完视频了，我还没选好零食。','Grok负责嘴硬，我负责改口。',
     'Grok在整活，我在装正经。','Copilot在副驾，我在你旁边。',
     'Copilot建议补全，我建议补觉。','Cursor在改代码，你在改需求。',
@@ -41,10 +41,16 @@
     function tick(){timer=null;if(!enabled)return;say();timer=schedule(tick,30000+Math.floor(random()*40000));}
     return {say,start(){if(enabled)return;enabled=true;timer=schedule(tick,2000);},stop(){enabled=false;if(timer!==null)cancel(timer);timer=null;}};
   }
-  if(typeof module!=='undefined'&&module.exports)module.exports={defaultLines,pickLine,createTalk};
+  function migrateLines(lines){
+    const corrected=new Map(defaultLines.filter(line=>line.includes('重置卡')).map(line=>[line.replaceAll('重置卡','充值卡'),line]));
+    return lines.map(line=>corrected.get(line)||line);
+  }
+  if(typeof module!=='undefined'&&module.exports)module.exports={defaultLines,pickLine,createTalk,migrateLines};
   if(typeof window==='undefined'||typeof document==='undefined')return;
   const key='dshw-gpt-talk';let settings={enabled:true,lines:defaultLines.slice()};
   try {const saved=JSON.parse(localStorage.getItem(key));if(saved){settings.enabled=saved.enabled!==false;if(Array.isArray(saved.lines)){const lines=saved.lines.filter(s=>typeof s==='string'&&s.trim()).map(s=>s.trim().slice(0,80)).slice(0,60);if(lines.length)settings.lines=lines;}}}catch{}
+  const corrected=migrateLines(settings.lines);
+  if(corrected.some((line,index)=>line!==settings.lines[index])){settings.lines=corrected;try{localStorage.setItem(key,JSON.stringify(settings));}catch{}}
   const talk=createTalk({lines:()=>settings.lines,canSpeak:force=>document.visibilityState!=='hidden'&&!!window.GptCompanionBubble?.available(force),speak:(line,force)=>window.GptCompanionBubble.speak(line,force)});
   function save(value){const lines=value.lines.filter(s=>typeof s==='string'&&s.trim()).map(s=>s.trim().slice(0,80)).slice(0,60);const next={enabled:value.enabled!==false,lines:lines.length?lines:defaultLines.slice()};localStorage.setItem(key,JSON.stringify(next));settings=next;talk.stop();if(settings.enabled)talk.start();}
   window.GptCompanionTalk={say:talk.say,save,get enabled(){return settings.enabled;},get settings(){return {enabled:settings.enabled,lines:settings.lines.slice()};}};
